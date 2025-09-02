@@ -101,6 +101,14 @@ body {
     text-align: left;
 }
 
+.obituary .survived-by-text {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-style: italic;
+}
+
 .obituary .closing {
     font-style: italic;
     color: #7f8c8d;
@@ -132,6 +140,44 @@ body {
     font-size: 1rem;
     color: #7f8c8d;
     font-style: normal;
+}
+
+/* Survived By Section */
+.survived-by {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(52, 73, 94, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.survived-by h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 2rem;
+}
+
+.survived-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.survived-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.survived-item p {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    line-height: 1.6;
 }
 
 /* Remembrance Section */
