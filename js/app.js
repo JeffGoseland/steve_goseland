@@ -1,12 +1,19 @@
 // Set base path based on environment
 (function() {
-    var base = document.createElement('base');
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        // Local development
-        base.href = './';
-    } else {
-        // Production (Netlify)
-        base.href = '/steve-goseland/';
+    try {
+        var base = document.createElement('base');
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // Local development
+            base.href = './';
+        } else {
+            // Production (Netlify)
+            base.href = '/steve-goseland/';
+        }
+        document.head.appendChild(base);
+    } catch (e) {
+        // Fallback: set default base for production
+        var fallbackBase = document.createElement('base');
+        fallbackBase.href = '/steve-goseland/';
+        document.head.appendChild(fallbackBase);
     }
-    document.head.appendChild(base);
 })();
