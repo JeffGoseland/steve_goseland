@@ -1,19 +1,11 @@
-// Set base path based on environment
+// Override base path for local development
 (function() {
-    try {
-        var base = document.createElement('base');
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            // Local development
-            base.href = './';
-        } else {
-            // Production (Netlify)
-            base.href = '/steve-goseland/';
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Local development: override the default base tag
+        var existingBase = document.querySelector('base');
+        if (existingBase) {
+            existingBase.href = './';
         }
-        document.head.appendChild(base);
-    } catch (e) {
-        // Fallback: set default base for production
-        var fallbackBase = document.createElement('base');
-        fallbackBase.href = '/steve-goseland/';
-        document.head.appendChild(fallbackBase);
     }
+    // Production keeps the default /steve-goseland/ base from HTML
 })();
